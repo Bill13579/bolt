@@ -1,8 +1,8 @@
-var root_dir = data.plugin_root;
+var root_dir = "";
 var context_menu = document.getElementById("bolt-context-menu");
 
 function fireEventOnElement(event_name, element) {
-	if (document.createEvent) {
+	if ("createEvent" in document) {
 		var evt = document.createEvent("HTMLEvents");
 		evt.initEvent(event_name, false, true);
 		element.dispatchEvent(evt);
