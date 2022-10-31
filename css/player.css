@@ -1,0 +1,328 @@
+#bolt-video-container * {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, Sans-Serif;
+}
+
+#bolt-context-menu {
+	display: none;
+	z-index: 1000;
+	position: absolute;
+	overflow: hidden;
+	border: none;
+	white-space: nowrap;
+	background: rgba(50, 223, 239, 0.85);
+	color: white;
+	border-radius: 1.5px;
+	padding: 0;
+}
+
+#bolt-video-wrapper {
+	width: inherit;
+	height: inherit;
+	position: relative;
+}
+
+.bolt-loader {
+	width: 120px;
+	height: 120px;
+}
+
+.bolt-loader div {
+	border: 7.5px solid rgba(243, 243, 243, 0.3);
+	border-top: 7.5px solid #3498db;
+	border-radius: 50%;
+	width: inherit;
+	height: inherit;
+	-moz-animation: spin 2s ease infinite;
+	-webkit-animation: spin 2s ease infinite;
+	animation: spin 2s ease infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#bolt-video-loader {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	display: none;
+}
+
+.bolt-context-menu-item {
+	cursor: pointer;
+	list-style-type: none;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	padding-top: 4.5px !important;
+	padding-bottom: 4.5px !important;
+}
+
+.bolt-context-menu-item:hover {
+	background-color: rgb(50, 223, 239);
+}
+
+.bolt-context-menu-item span {
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 100%;
+}
+
+.bolt-click-through {
+	pointer-events: none;
+}
+
+.bolt-context-menu-item-checked, .bolt-context-menu-item-checked img {
+	float: right;
+	height: 19.1px;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 100%;
+	margin-left: 5px;
+}
+
+#bolt-video-container {
+	position: relative;
+	width: 100%;
+	background-color: rgb(0, 0, 0);
+	height: 100%;
+}
+
+#bolt-video {
+	width: inherit;
+	height: inherit;
+}
+
+#bolt-player-controls-container {
+	background-color: rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	pointer-events: auto;
+	opacity: 0;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+[data-text]::after {
+	content: attr(data-text);
+}
+
+#bolt-player-controls-header {
+	width: inherit;
+	text-align: center;
+}
+
+#bolt-player-controls-current-time {
+	font-size: 16px;
+	color: white;
+	margin-bottom: 0px;
+}
+
+#bolt-player-controls-top {
+	margin-bottom: 6px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+#bolt-player-controls-l, #bolt-player-controls-r {
+	display: table;
+}
+
+#bolt-player-controls-l *, #bolt-player-controls-r * {
+	display: table-cell;
+	vertical-align: middle;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#bolt-player-controls-mute {
+	margin-right: 0;
+}
+
+#bolt-player-controls-volume {
+	margin-left: 6px;
+}
+
+#bolt-player-controls-vol {
+	padding-right: 9px;
+}
+
+#bolt-player-controls-playpause, #bolt-player-controls-skip-ahead, #bolt-player-controls-mute, #bolt-player-controls-fullscreen {
+	width: 27px;
+	height: 27px;
+	background-size: contain;
+	display: table-cell;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-transition: background-image 0.1s linear;
+	transition: background-image 0.1s linear;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#bolt-player-controls-playpause {
+	width: 30px;
+	height: 30px;
+}
+
+#bolt-player-controls-progress {
+	width: 100%;
+}
+
+#bolt-player-controls-volume {
+	width: 70px;
+}
+
+#bolt-player-controls-playpause {
+	background-image: url("../res/play-white.png");
+}
+
+#bolt-player-controls-mute {
+	background-image: url("../res/volume-white.png");
+}
+
+#bolt-player-controls-fullscreen {
+	background-image: url("../res/fullscreen-white.png");
+}
+
+#bolt-player-controls-l {
+	width: auto;
+	float: left;
+}
+
+#bolt-player-controls-r {
+	width: auto;
+	float: right;
+}
+
+.bolt-player-range-input {
+	background: transparent !important;
+	padding: 0 !important;
+    -webkit-appearance: none;
+    border: 0px solid white !important;
+    width: 300px;
+	border-radius: 3px;
+}
+
+.bolt-player-range-input::-webkit-slider-runnable-track {
+	width: inherit;
+	height: 5px;
+	background: #dddddd;
+	border: none;
+	border-radius: 3px;
+}
+
+.bolt-player-range-input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: none;
+	height: 16px;
+	width: 16px;
+	border-radius: 50%;
+	background: white;
+	margin-top: -5.2px;
+}
+
+.bolt-player-range-input::-webkit-slider-thumb:hover, input[type=range]::-webkit-slider-thumb:active {
+	height: 19px;
+	width: 19px;
+	margin-top: -7.2px;
+}
+
+.bolt-player-range-input:focus {
+	outline: none;
+}
+
+.bolt-player-range-input:focus::-webkit-slider-runnable-track {
+	background: #cccccc;
+}
+
+.bolt-player-range-input::-moz-range-track {
+	width: inherit;
+	height: 5px;
+	background: #dddddd;
+	border: none;
+	border-radius: 3px;
+}
+
+.bolt-player-range-input::-moz-range-thumb {
+	border: none;
+	height: 16px;
+	width: 16px;
+	border-radius: 50%;
+	background: white;
+}
+
+.bolt-player-range-input::-moz-range-progress {
+	height: 5px;
+	background: #40a4df;
+	border: none;
+	border-radius: 3px 0 0 3px;
+}
+
+.bolt-player-range-input::-moz-range-thumb:hover, .bolt-player-range-input::-moz-range-thumb:active {
+	height: 19px;
+	width: 19px;
+}
+
+.bolt-player-range-input::-moz-focusring {
+	outline: 0px solid white;
+	outline-offset: -1px;
+}
+
+.bolt-player-range-input::-ms-track {
+	width: inherit;
+	height: 5px;
+	background: transparent;
+	border-color: transparent;
+	border: 6px 0;
+	color: transparent;
+	border-radius: 3px;
+}
+
+.bolt-player-range-input::-ms-fill-lower {
+	background: #40a4df;
+	border-radius: 10px;
+}
+
+.bolt-player-range-input::-ms-fill-upper {
+	background: #dddddd;
+	border-radius: 10px;
+}
+
+.bolt-player-range-input::-ms-thumb {
+	border: none;
+	height: 16px;
+	width: 16px;
+	border-radius: 50%;
+	background: white;
+	margin-top: 0.7px;
+}
