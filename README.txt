@@ -1,5 +1,5 @@
 Bolt is a powerful video player for Wordpress!
-Demo: https://bill13579.github.io/bolt/player.html
+Demo: https://github.com/Bill13579/bolt/tree/gh-pages
 
 Installation:
 
